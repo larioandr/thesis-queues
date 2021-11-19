@@ -16,11 +16,12 @@
 - `tqdm`
 - `click`
 - `pebble`
+- `ipywidgets`
 - `widgetsnbextension`
 
 ```bash
 $ pip install matplotlib seaborn tarjan jupyterlab pandas tqdm click pebble \
-    widgetsnbextension
+    widgetsnbextension ipywidgets
 ```
 
 Если используется `jupyter-lab`, то для того, чтобы заработали прогресс-бары,
