@@ -4,6 +4,8 @@
 #include "Randoms.h"
 #include <chrono>
 #include <algorithm>
+#include <exception>
+#include <stdexcept>
 
 namespace cqumo {
 
