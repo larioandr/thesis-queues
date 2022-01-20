@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
         std::cout << "ERROR: arrival and service rates must be positive\n";
         return 1;
     }
-    ssize_t queueCapacity = static_cast<size_t>(queueCapacityInt);
+    size_t queueCapacity = static_cast<size_t>(queueCapacityInt);
 
     // Check whether number of packets were provided:
     size_t maxPackets = 10000;

@@ -1,9 +1,14 @@
 from setuptools import setup, Extension, find_packages
 from Cython.Build import cythonize
 import os
+import sys
 
-os.environ['CC'] = 'g++'
-os.environ['CXX'] = 'g++'
+if sys.platform.startswith('win'):
+    extra_compile_args = ['/std:c++20', '/O2']
+else:
+    extra_compile_args = ['-std=c++20', '-Wno-deprecated', '-O3']
+# os.environ['CC'] = 'g++'
+# os.environ['CXX'] = 'g++'
 
 extensions = [
     Extension(
@@ -20,8 +25,9 @@ extensions = [
         ],
         include_dirs=['cqumo', 'cqumo/tandem'],
         language="c++",
-        extra_compile_args=["-std=c++14", "-Wno-deprecated", "-O3"],
-        extra_link_args=["-std=c++14"]
+        extra_compile_args=extra_compile_args,
+        # extra_compile_args=["-std=c++20", "-Wno-deprecated", "-O3"],
+        extra_link_args=["-std=c++20"]
     ),
     Extension(
         "pyqumo.cqumo.randoms", [
@@ -31,8 +37,9 @@ extensions = [
         ],
         include_dirs=['cqumo'],
         language="c++",
-        extra_compile_args=["-std=c++14", "-Wno-deprecated", "-O3"],
-        extra_link_args=["-std=c++14"]
+        extra_compile_args=extra_compile_args,
+        # extra_compile_args=["-std=c++20", "-Wno-deprecated", "-O3"],
+        extra_link_args=["-std=c++20"]
     )
 ]
 

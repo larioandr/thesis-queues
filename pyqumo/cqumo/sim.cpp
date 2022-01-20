@@ -4,17 +4,16 @@
 {
     "distutils": {
         "depends": [
-            "cqumo/Functions.h",
-            "cqumo/tandem/Simulation.h",
-            "cqumo/tandem/Statistics.h"
+            "cqumo\\Functions.h",
+            "cqumo\\tandem\\Simulation.h",
+            "cqumo\\tandem\\Statistics.h"
         ],
         "extra_compile_args": [
-            "-std=c++14",
-            "-Wno-deprecated",
-            "-O3"
+            "/std:c++20",
+            "/O2"
         ],
         "extra_link_args": [
-            "-std=c++14"
+            "-std=c++20"
         ],
         "include_dirs": [
             "cqumo",
@@ -960,7 +959,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "pyqumo/cqumo/sim.pyx",
+  "pyqumo\\cqumo\\sim.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1480,7 +1479,7 @@ static const char __pyx_k_pyqumo_cqumo_sim[] = "pyqumo.cqumo.sim";
 static const char __pyx_k_pyqumo_sim_tandem[] = "pyqumo.sim.tandem";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_pyqumo_sim_helpers[] = "pyqumo.sim.helpers";
-static const char __pyx_k_pyqumo_cqumo_sim_pyx[] = "pyqumo/cqumo/sim.pyx";
+static const char __pyx_k_pyqumo_cqumo_sim_pyx[] = "pyqumo\\cqumo\\sim.pyx";
 static const char __pyx_k_CountableDistribution[] = "CountableDistribution";
 static const char __pyx_k_simulate_tandem_line_169[] = "simulate_tandem (line 169)";
 static const char __pyx_k_Simulate_tandem_using_C_impleme[] = "\n    Simulate tandem using C++ implementation. No cross-traffic supported.\n\n    Example\n    -------\n    >>> simulate_tandem(\n    >>>     Erlang(2, 1), \n    >>>     [Exponential(5), Exponential(6), Exponential(3)], \n    >>>     10,  # queue capacity\n    >>>     1000000)  # number of packets (1 million)\n\n    Results returned are defined in pyqumo.sim.tandem.Results.\n\n    Parameters\n    ----------\n    arrival : Distribution instance\n    services : list of Distribution instances, this list size is the number\n        of nodes in the tandem network\n    queue_capacity: int or np.inf\n    max_packets: \n    ";

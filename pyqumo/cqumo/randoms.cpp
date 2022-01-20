@@ -4,15 +4,14 @@
 {
     "distutils": {
         "depends": [
-            "cqumo/Randoms.h"
+            "cqumo\\Randoms.h"
         ],
         "extra_compile_args": [
-            "-std=c++14",
-            "-Wno-deprecated",
-            "-O3"
+            "/std:c++20",
+            "/O2"
         ],
         "extra_link_args": [
-            "-std=c++14"
+            "-std=c++20"
         ],
         "include_dirs": [
             "cqumo"
@@ -935,7 +934,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "pyqumo/cqumo/randoms.pyx",
+  "pyqumo\\cqumo\\randoms.pyx",
 };
 
 /*--- Type declarations ---*/
