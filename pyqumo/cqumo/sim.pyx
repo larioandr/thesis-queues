@@ -6,6 +6,7 @@ from pyqumo.sim.helpers import Statistics
 from pyqumo.sim.gg1 import Results as GG1Results
 from pyqumo.sim.tandem import Results as TandemResults
 from pyqumo.random import CountableDistribution, Exponential
+import cython
 
 
 # noinspection PyUnresolvedReferences
@@ -61,7 +62,10 @@ cdef _build_tandem_results(const SimData& simData, int numStations):
     results.real_time = simData.realTimeMs
     return results
 
-cdef double _call_pyobject(void *context):
+
+@cython.cfunc
+@cython.exceptval(check=False)
+def _call_pyobject(void *context) -> cython.double:
     # noinspection PyBroadException
     try:
         evaluable = <object>context
